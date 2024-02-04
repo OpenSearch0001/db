@@ -7,8 +7,8 @@ from discord_webhook import DiscordWebhook
 intents = discord.Intents.default()
 intents.message_content = True
 
-allowed_user_ids = [1147592588044542055, 725075907538190397, 1188998155740651520]
-ownerlist = [725075907538190397]
+allowed_user_ids = []
+ownerlist = []
 
 
 
@@ -42,25 +42,7 @@ async def lookup(ctx, arg1):
         await ctx.send(embed=embed)
         return
     
-    file_paths = [
-        'scrapped\\db.txt',
-        'scrapped\\db1.txt',
-        'scrapped\\db2.txt',
-        'scrapped\\Discord.com_2023.txt',
-        'scrapped\\discord.ggUser2023.txt',
-        'scrapped\\discord.ggUser2023scraped.txt',
-        'scrapped\\discord1_2023.com.txt',
-        'scrapped\\discord1.txt',
-        'scrapped\\discord2.csv',
-        'scrapped\\discord3.txt',
-        'scrapped\\discord4.csv',
-        'scrapped\\discord5.csv',
-        'scrapped\\discord6.txt',
-        'scrapped\\discord7.txt',
-        'scrapped\\discord8.csv',
-        'scrapped\\Discords.com53.67k.csv',
-        'scrapped\\Discords.com64.84k.csv',
-    ]
+    file_paths = []
 
     found_messages = []
 
