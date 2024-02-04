@@ -127,4 +127,4 @@ async def wllist(ctx):
     await ctx.send(embed=embed)
 
 
-bot.run("MTIwMzc4MzM1NDM3MDA5NzI0Mg.GVzYKm.ZGjIFRiUTJzKyE9IGehoH4sgi9K528uoi2xdk4")
+bot.run("")
