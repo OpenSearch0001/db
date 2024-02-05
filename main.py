@@ -1,4 +1,6 @@
 import discord
+import os
+
 from discord.ext import commands
 from discord.embeds import Embed
 from discord.ext.commands import Bot
@@ -6,9 +8,24 @@ from discord_webhook import DiscordWebhook
 
 intents = discord.Intents.default()
 intents.message_content = True
+PATH = os.getcwd()
 
-allowed_user_ids = [1147592588044542055, 725075907538190397, 1188998155740651520]
-ownerlist = [725075907538190397]
+
+def folder_file_checking():
+    if not os.path.isfile(f"{PATH}/wl.txt"):
+        with open('wl.txt', 'w') as fichier:
+            fichier.write("")
+    if not os.path.isfile(f"{PATH}/owners.txt"):
+        with open('owners.txt', 'w') as fichier:
+            fichier.write("")
+    if not os.path.exists(f"{PATH}/db/")
+        os.makedirs(f"{PATH}/db/")
+
+folder_file_checking()
+
+
+allowed_user_ids = [int(id) for id in open('wl.txt').read().split()]
+ownerlist = [int(id) for id in open('owners.txt').read().split()]
 
 
 
@@ -41,7 +58,8 @@ async def lookup(ctx, arg1):
         )
         await ctx.send(embed=embed)
         return
-    
+
+    # auto add file name
     file_paths = [
         'scrapped\\db.txt',
         'scrapped\\db1.txt',
